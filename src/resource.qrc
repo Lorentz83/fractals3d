@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>resource/icona-16.png</file>
+        <file>resource/icona-64.png</file>
+        <file>resource/splash.png</file>
+        <file>shaderprog/init.frag</file>
+        <file>shaderprog/prog.frag</file>
+        <file>shaderprog/prog.vert</file>
+    </qresource>
+</RCC>

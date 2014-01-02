@@ -1,0 +1,7 @@
+/src/Makefile
+/src/*.o
+/src/moc_*.cpp
+/src/qrc_*.cpp
+/src/ui_*.h
+/bin/*
+src/fractals3d

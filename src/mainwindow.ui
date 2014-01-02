@@ -1,0 +1,859 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Fractals3D</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="resource.qrc" >
+    <normaloff>:/resource/icona-64.png</normaloff>:/resource/icona-64.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>24</y>
+     <width>800</width>
+     <height>555</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_11" >
+    <item>
+     <widget class="QSplitter" name="splitter" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QGroupBox" name="left_bar" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor" >
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
+       <property name="title" >
+        <string>Image</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_9" >
+        <item>
+         <widget class="glFractal" native="1" name="glf" >
+          <property name="minimumSize" >
+           <size>
+            <width>300</width>
+            <height>300</height>
+           </size>
+          </property>
+          <property name="cursor" >
+           <cursorShape>CrossCursor</cursorShape>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" native="1" name="right_bar" >
+       <property name="maximumSize" >
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_10" >
+        <property name="spacing" >
+         <number>0</number>
+        </property>
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QToolBox" name="toolBox" >
+          <property name="frameShape" >
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="currentIndex" >
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="toolFrattali" >
+           <property name="geometry" >
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>214</width>
+             <height>434</height>
+            </rect>
+           </property>
+           <attribute name="label" >
+            <string>Fractal</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout" >
+            <item>
+             <widget class="QGroupBox" name="precisionBox" >
+              <property name="title" >
+               <string>Engine</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3" >
+               <item row="0" column="0" colspan="2" >
+                <widget class="QComboBox" name="engine" />
+               </item>
+               <item row="1" column="0" >
+                <widget class="QLabel" name="label" >
+                 <property name="text" >
+                  <string>Precision:</string>
+                 </property>
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" >
+                <widget class="QSpinBox" name="precision" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="correctionMode" >
+                  <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+                 </property>
+                 <property name="minimum" >
+                  <number>1</number>
+                 </property>
+                 <property name="maximum" >
+                  <number>8</number>
+                 </property>
+                 <property name="singleStep" >
+                  <number>1</number>
+                 </property>
+                 <property name="value" >
+                  <number>6</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="frattaliDefault" >
+              <item>
+               <property name="text" >
+                <string>&lt;free></string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="frattaliC" >
+              <property name="title" >
+               <string>Parameter</string>
+              </property>
+              <property name="checkable" >
+               <bool>true</bool>
+              </property>
+              <property name="checked" >
+               <bool>false</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_0" >
+               <item row="0" column="0" colspan="2" >
+                <widget class="QLabel" name="label_3" >
+                 <property name="text" >
+                  <string>real and immaginary</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" >
+                <widget class="QDoubleSpinBox" name="frattaliCR" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>4</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>-20.000000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.010000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" >
+                <widget class="QDoubleSpinBox" name="frattaliCI" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>4</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>-20.000000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.010000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" >
+                <widget class="QDoubleSpinBox" name="frattaliCJ" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>4</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>-20.000000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.010000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1" >
+                <widget class="QDoubleSpinBox" name="frattaliCK" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>4</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>-20.000000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.010000000000000</double>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="frattaliC_2" >
+              <property name="title" >
+               <string>Position</string>
+              </property>
+              <property name="checkable" >
+               <bool>false</bool>
+              </property>
+              <property name="checked" >
+               <bool>false</bool>
+              </property>
+              <layout class="QGridLayout" name="gridLayout" >
+               <item row="0" column="0" >
+                <widget class="QDoubleSpinBox" name="positionR" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>4</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>-20.000000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.010000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1" >
+                <widget class="QDoubleSpinBox" name="positionI" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>4</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>-20.000000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.010000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" >
+                <widget class="QDoubleSpinBox" name="positionJ" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>4</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>-20.000000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.010000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" >
+                <widget class="QDoubleSpinBox" name="positionK" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>4</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>-20.000000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.010000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" >
+                <widget class="QLabel" name="label_6" >
+                 <property name="text" >
+                  <string>Zoom Factor:</string>
+                 </property>
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1" >
+                <widget class="QDoubleSpinBox" name="zoomFactor" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="decimals" >
+                  <number>2</number>
+                 </property>
+                 <property name="minimum" >
+                  <double>0.010000000000000</double>
+                 </property>
+                 <property name="maximum" >
+                  <double>20.000000000000000</double>
+                 </property>
+                 <property name="singleStep" >
+                  <double>0.100000000000000</double>
+                 </property>
+                 <property name="value" >
+                  <double>1.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2" >
+              <item>
+               <spacer name="horizontalSpacer" >
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0" >
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="frattaliOk" >
+                <property name="text" >
+                 <string>Generate!</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_2" >
+              <property name="orientation" >
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0" >
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_4" >
+           <property name="geometry" >
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>152</width>
+             <height>244</height>
+            </rect>
+           </property>
+           <attribute name="label" >
+            <string>Improvments</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3" >
+            <item>
+             <widget class="QGroupBox" name="aggCorrezioneGrigi" >
+              <property name="title" >
+               <string>Gray corrections</string>
+              </property>
+              <property name="flat" >
+               <bool>false</bool>
+              </property>
+              <property name="checkable" >
+               <bool>true</bool>
+              </property>
+              <property name="checked" >
+               <bool>false</bool>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout" >
+               <item>
+                <widget class="QSlider" name="aggCorrezioneGrigiVal" >
+                 <property name="minimum" >
+                  <number>1</number>
+                 </property>
+                 <property name="maximum" >
+                  <number>100</number>
+                 </property>
+                 <property name="singleStep" >
+                  <number>1</number>
+                 </property>
+                 <property name="orientation" >
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="tickPosition" >
+                  <enum>QSlider::TicksBelow</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLCDNumber" name="aggCorrezioneGrigiDisplay" >
+                 <property name="numDigits" >
+                  <number>3</number>
+                 </property>
+                 <property name="segmentStyle" >
+                  <enum>QLCDNumber::Outline</enum>
+                 </property>
+                 <property name="value" stdset="0" >
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="intValue" stdset="0" >
+                  <number>1</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="aggColore" >
+              <property name="title" >
+               <string>Color</string>
+              </property>
+              <property name="flat" >
+               <bool>false</bool>
+              </property>
+              <property name="checkable" >
+               <bool>true</bool>
+              </property>
+              <property name="checked" >
+               <bool>false</bool>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_2" >
+               <item>
+                <widget class="QComboBox" name="aggColoreSel" />
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3" >
+              <item>
+               <spacer name="horizontalSpacer_2" >
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0" >
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="aggApplica" >
+                <property name="text" >
+                 <string>Apply!</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="background" >
+              <property name="title" >
+               <string>Background</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5" >
+               <item>
+                <widget class="colorPicker" native="1" name="backgroundColor" />
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer" >
+              <property name="orientation" >
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0" >
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="viewPoint" >
+           <property name="geometry" >
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>233</width>
+             <height>429</height>
+            </rect>
+           </property>
+           <attribute name="label" >
+            <string>View</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4" >
+            <item>
+             <widget class="QGroupBox" name="changeLightPos" >
+              <property name="title" >
+               <string>Light Position</string>
+              </property>
+              <property name="flat" >
+               <bool>false</bool>
+              </property>
+              <property name="checkable" >
+               <bool>true</bool>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_6" >
+               <item>
+                <widget class="rotationWidget" native="1" name="lightPos" />
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="changeViewPos" >
+              <property name="title" >
+               <string>View Position</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_7" >
+               <item>
+                <widget class="rotationWidget" native="1" name="viewPos" />
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="changeTexturePos" >
+              <property name="title" >
+               <string>Texture Position</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_8" >
+               <item>
+                <widget class="rotationWidget" native="1" name="texturePos" />
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox" >
+              <property name="title" >
+               <string>View style</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_4" >
+               <item row="0" column="0" colspan="2" >
+                <widget class="QComboBox" name="viewStyle" />
+               </item>
+               <item row="1" column="1" >
+                <widget class="QSpinBox" name="viewPrecision" >
+                 <property name="alignment" >
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="minimum" >
+                  <number>1</number>
+                 </property>
+                 <property name="maximum" >
+                  <number>20</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QProgressBar" name="progressBar" >
+          <property name="value" >
+           <number>0</number>
+          </property>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_Salva_immagine" />
+    <addaction name="action_Save_fractal" />
+    <addaction name="separator" />
+    <addaction name="action_Esci" />
+   </widget>
+   <widget class="QMenu" name="menu" >
+    <property name="title" >
+     <string>&amp;?</string>
+    </property>
+    <addaction name="action_About" />
+    <addaction name="actionAbout_Qt" />
+   </widget>
+   <widget class="QMenu" name="menuTexture" >
+    <property name="title" >
+     <string>Texture</string>
+    </property>
+    <addaction name="action_Save_texture" />
+    <addaction name="action_Load_texture" />
+   </widget>
+   <addaction name="menuFile" />
+   <addaction name="menuTexture" />
+   <addaction name="menu" />
+  </widget>
+  <widget class="QStatusBar" name="statusbar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>579</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <action name="action_Salva_immagine" >
+   <property name="text" >
+    <string>&amp;Save image...</string>
+   </property>
+  </action>
+  <action name="action_Esci" >
+   <property name="text" >
+    <string>&amp;Exit</string>
+   </property>
+  </action>
+  <action name="action_About" >
+   <property name="text" >
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="action_Help" >
+   <property name="text" >
+    <string>&amp;Help</string>
+   </property>
+   <property name="menuRole" >
+    <enum>QAction::AboutQtRole</enum>
+   </property>
+  </action>
+  <action name="actionAbout_Qt" >
+   <property name="text" >
+    <string>About &amp;Qt</string>
+   </property>
+  </action>
+  <action name="actionIso_Surfaces" >
+   <property name="text" >
+    <string>Iso-Surfaces</string>
+   </property>
+  </action>
+  <action name="actionDirect_Volume_Renderig" >
+   <property name="text" >
+    <string>Direct Volume Renderig</string>
+   </property>
+  </action>
+  <action name="actionParallel_plane" >
+   <property name="text" >
+    <string>Parallel plane</string>
+   </property>
+  </action>
+  <action name="actionConcentric_sphere" >
+   <property name="text" >
+    <string>Concentric sphere</string>
+   </property>
+  </action>
+  <action name="actionCube" >
+   <property name="text" >
+    <string>Cube</string>
+   </property>
+  </action>
+  <action name="action_Save_fractal" >
+   <property name="text" >
+    <string>Save fractal...</string>
+   </property>
+  </action>
+  <action name="action_Save_texture" >
+   <property name="text" >
+    <string>Save texture...</string>
+   </property>
+  </action>
+  <action name="action_Load_texture" >
+   <property name="text" >
+    <string>Load texture...</string>
+   </property>
+  </action>
+  <action name="actionDummy" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Dummy</string>
+   </property>
+  </action>
+  <action name="actionStatic" >
+   <property name="text" >
+    <string>Static</string>
+   </property>
+  </action>
+  <action name="actionDynamic" >
+   <property name="text" >
+    <string>Dynamic</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>colorPicker</class>
+   <extends>QWidget</extends>
+   <header>colorpicker.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>rotationWidget</class>
+   <extends>QWidget</extends>
+   <header>rotation.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>glFractal</class>
+   <extends>QWidget</extends>
+   <header>glfractal.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>engine</tabstop>
+  <tabstop>precision</tabstop>
+  <tabstop>frattaliDefault</tabstop>
+  <tabstop>frattaliC</tabstop>
+  <tabstop>frattaliCR</tabstop>
+  <tabstop>frattaliCI</tabstop>
+  <tabstop>frattaliCJ</tabstop>
+  <tabstop>frattaliCK</tabstop>
+  <tabstop>positionR</tabstop>
+  <tabstop>positionI</tabstop>
+  <tabstop>positionJ</tabstop>
+  <tabstop>positionK</tabstop>
+  <tabstop>zoomFactor</tabstop>
+  <tabstop>frattaliOk</tabstop>
+  <tabstop>aggCorrezioneGrigi</tabstop>
+  <tabstop>aggCorrezioneGrigiVal</tabstop>
+  <tabstop>aggColore</tabstop>
+  <tabstop>aggColoreSel</tabstop>
+  <tabstop>aggApplica</tabstop>
+  <tabstop>changeLightPos</tabstop>
+  <tabstop>viewStyle</tabstop>
+  <tabstop>viewPrecision</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resource.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>aggCorrezioneGrigiVal</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>aggCorrezioneGrigiDisplay</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>723</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>773</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
